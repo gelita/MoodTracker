@@ -1,11 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/ivMood"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:contentDescription="@string/great_desc"
+        android:paddingLeft="80dp"
+        android:paddingTop="250dp"
+        android:paddingRight="80dp"
+        android:paddingBottom="250dp"
+        android:src="@drawable/great_mood" />
 
-</LinearLayout>
+    <ImageButton
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@null"
+        android:contentDescription="@string/button_add_note"
+        android:src="@drawable/ic_note_add_black" />
+
+    <ImageButton
+        android:id="@+id/btnHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@null"
+        android:contentDescription="@string/button_view_history"
+        android:src="@drawable/ic_history_black" />
+
+    <!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:fillViewport="true">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/ivGood"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:background="@android:color/holo_green_light"-->
+    <!--android:contentDescription="@string/good_desc"-->
+    <!--android:paddingLeft="100dp"-->
+    <!--android:paddingTop="250dp"-->
+    <!--android:paddingRight="100dp"-->
+    <!--android:paddingBottom="250dp"-->
+    <!--android:src="@drawable/good_mood" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/ivDecent"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:background="@color/cornflower_blue_65"-->
+    <!--android:contentDescription="@string/decent_desc"-->
+    <!--android:paddingLeft="100dp"-->
+    <!--android:paddingTop="250dp"-->
+    <!--android:paddingRight="100dp"-->
+    <!--android:paddingBottom="250dp"-->
+    <!--android:src="@drawable/decent_mood" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/ivBad"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:background="@color/warm_grey"-->
+    <!--android:contentDescription="@string/bad_desc"-->
+    <!--android:paddingLeft="100dp"-->
+    <!--android:paddingTop="250dp"-->
+    <!--android:paddingRight="100dp"-->
+    <!--android:paddingBottom="250dp"-->
+    <!--android:src="@drawable/bad_mood" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/ivSad"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:background="@color/faded_red"-->
+    <!--android:contentDescription="@string/sad_desc"-->
+    <!--android:paddingLeft="100dp"-->
+    <!--android:paddingTop="250dp"-->
+    <!--android:paddingRight="100dp"-->
+    <!--android:paddingBottom="250dp"-->
+    <!--&lt;!&ndash;android:src="@drawable/sad_mood" />&ndash;&gt;-->
+    <!--</LinearLayout>-->
+    <!--</ScrollView>   -->
+</RelativeLayout>

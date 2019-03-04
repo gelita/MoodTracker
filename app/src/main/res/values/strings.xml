@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Mood Tracker</string>
+    <string name="great_desc">Great mood emoji</string>
+    <string name="good_desc">Good mood emoji</string>
+    <string name="bad_desc">Bad mood emoji</string>
+    <string name="sad_desc">Sad mood emoji</string>
+    <string name="decent_desc">Decent mood emoji</string>
+    <string name="button_add_note">Add Note Button</string>
+    <string name="button_view_history">View History Button</string>
 </resources>
