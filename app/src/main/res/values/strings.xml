@@ -7,4 +7,11 @@
     <string name="decent_desc">Decent mood emoji</string>
     <string name="button_add_note">Add Note Button</string>
     <string name="button_view_history">View History Button</string>
+    <string name="one_day_ago">One day ago</string>
+    <string name="two_days_ago">Two days ago</string>
+    <string name="three_days_ago">Three days ago</string>
+    <string name="four_days_ago">Four days ago</string>
+    <string name="five_days_ago">Five days ago</string>
+    <string name="six_days_ago">Six days ago</string>
+    <string name="one_week_ago">One week ago</string>
 </resources>
