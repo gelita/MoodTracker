@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
     public boolean onTouch(View v, MotionEvent event) {
         return false;
     }
+
     //change bg color of Activity
     public void setActivityBackgroundColor(int color) {
         View view = this.getWindow().getDecorView();
@@ -117,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
         float diffY = moveEvent.getY() - downEvent.getY();
         float diffX = moveEvent.getX() - downEvent.getX();
         //which axis had the greater movement? X or Y
+        //if mov't is horizontal -> ignore
         if (Math.abs(diffX) > Math.abs(diffY)) {
             //right or left swipe
             if (Math.abs(diffX) > SWIPE_THRESHOLD &&
@@ -129,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
                 result = true;
             }
         } else {
-            //vertical swipe
+            //only vertical swipes are recognized and responded to
             if (Math.abs(diffY) > SWIPE_THRESHOLD
                     && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
                 if (diffY > 0) {
@@ -152,11 +154,11 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
     }
 
     public void onSwipeRight() {
-        Toast.makeText(this, "swipe right", Toast.LENGTH_SHORT).show();
+        // do nothing - ignore
     }
 
     public void onSwipeLeft() {
-        Toast.makeText(this, "swipe left", Toast.LENGTH_SHORT).show();
+        // do nothing -ignore
     }
 
     @Override
