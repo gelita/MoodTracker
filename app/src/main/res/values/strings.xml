@@ -14,4 +14,7 @@
     <string name="five_days_ago">Five days ago</string>
     <string name="six_days_ago">Six days ago</string>
     <string name="one_week_ago">One week ago</string>
+    <string name="comment">Comment</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
 </resources>
