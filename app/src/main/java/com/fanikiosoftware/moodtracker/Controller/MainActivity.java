@@ -3,6 +3,7 @@ package com.fanikiosoftware.moodtracker.Controller;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +16,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.fanikiosoftware.moodtracker.R;
 
@@ -23,13 +23,19 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
 
     public static final int SWIPE_THRESHOLD = 100;
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;
+    public static final int BANANA_YELLOW = -398257;
+    public static final int LIGHT_SAGE = -4658810;
+    public static final int CORNFLOWER_BLUE = -1522103591;
+    public static final int FADED_RED = -2212784;
+    public static final int LIGHT_GREY = -2894893;
+
     private ImageView ivMood;
     private ImageButton mAddButton;
     private ImageButton mHistoryButton;
     private EditText editText;
     private Button btnCancel, btnConfirm;
     public static final String PREF_KEY_MEMO1 = "PREFERENCE_KEY_MEMO1";
-
+    private View view;
     private SharedPreferences mPreferences;
     private GestureDetector mGestureDetector;
 
@@ -37,11 +43,12 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //checkNewUser();
-        //set default color background for first play
-        setActivityBackgroundColor(R.color.banana_yellow);
+        //set default bg color for first play
+        view = this.getWindow().getDecorView();
+        view.setBackgroundResource(R.color.faded_red);
         setContentView(R.layout.activity_main);
         ivMood = findViewById(R.id.ivMood);
-        ivMood.setImageResource(R.drawable.great_mood);
+        ivMood.setImageResource(R.drawable.sad_mood);
         mAddButton = findViewById(R.id.btnAdd);
         mHistoryButton = findViewById(R.id.btnHistory);
         //setup button listeners
@@ -105,14 +112,35 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
     }
 
     //change bg color of Activity
-    public void setActivityBackgroundColor(int color) {
-        View view = this.getWindow().getDecorView();
-        view.setBackgroundResource(color);
+    public void setActivityBackgroundColor() {
+        view = this.getWindow().getDecorView();
+        int color = ((ColorDrawable) view.getBackground()).getColor();
+        switch (color) {
+            case FADED_RED:
+                view.setBackgroundResource(R.color.light_grey);
+                ivMood.setImageResource(R.drawable.bad_mood);
+                break;
+            case LIGHT_GREY:
+                view.setBackgroundResource(R.color.cornflower_blue);
+                ivMood.setImageResource(R.drawable.decent_mood);
+                break;
+            case CORNFLOWER_BLUE:
+                view.setBackgroundResource(R.color.light_sage);
+                ivMood.setImageResource(R.drawable.good_mood);
+                break;
+            case LIGHT_SAGE:
+                view.setBackgroundResource(R.color.banana_yellow);
+                ivMood.setImageResource(R.drawable.great_mood);
+                break;
+            case BANANA_YELLOW:
+                //do nothing- user must swipe up to go back through moods
+                break;
+        }
     }
 
     @Override
     public boolean onFling(MotionEvent downEvent, MotionEvent moveEvent, float velocityX, float velocityY) {
-        //did event get handled here ? assume the negative
+        //did event get handled here? Assume the negative
         boolean result = false;
         //greater mov't along x or y axis? This determines horiz. mov't vs vertical mov't
         float diffY = moveEvent.getY() - downEvent.getY();
@@ -131,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
                 result = true;
             }
         } else {
-            //only vertical swipes are recognized and responded to
+            //recognize and responded to vertical up/down swipes
             if (Math.abs(diffY) > SWIPE_THRESHOLD
                     && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
                 if (diffY > 0) {
@@ -146,11 +174,10 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
     }
 
     private void onSwipeBottom() {
-        Toast.makeText(this, "swipe bottom", Toast.LENGTH_SHORT).show();
     }
 
     public void onSwipeTop() {
-        Toast.makeText(this, "swipe top", Toast.LENGTH_SHORT).show();
+        setActivityBackgroundColor();
     }
 
     public void onSwipeRight() {
