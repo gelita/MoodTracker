@@ -25,13 +25,11 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;
     public static final int BANANA_YELLOW = -398257;
     public static final int LIGHT_SAGE = -4658810;
-    public static final int CORNFLOWER_BLUE = -1522103591;
     public static final int FADED_RED = -2212784;
-    public static final int LIGHT_GREY = -2894893;
+    public static final int WARM_GREY = -6579301;
+    public static final int CORNFLOWER_BLUE= -16537100;
 
     private ImageView ivMood;
-    private ImageButton mAddButton;
-    private ImageButton mHistoryButton;
     private EditText editText;
     private Button btnCancel, btnConfirm;
     public static final String PREF_KEY_MEMO1 = "PREFERENCE_KEY_MEMO1";
@@ -49,12 +47,12 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
         setContentView(R.layout.activity_main);
         ivMood = findViewById(R.id.ivMood);
         ivMood.setImageResource(R.drawable.sad_mood);
-        mAddButton = findViewById(R.id.btnAdd);
-        mHistoryButton = findViewById(R.id.btnHistory);
+        ImageButton addButton = findViewById(R.id.btnAdd);
+        ImageButton historyButton = findViewById(R.id.btnHistory);
         //setup button listeners
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mGestureDetector = new GestureDetector(this);
-        mAddButton.setOnClickListener(new View.OnClickListener() {
+        addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final AlertDialog dialogBuilder =
@@ -83,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
             }
         });
         //history btn listener, start History Activity
-        mHistoryButton.setOnClickListener(new View.OnClickListener() {
+        historyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent historyActivityIntent = new Intent(MainActivity.this,
@@ -109,33 +107,6 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         return false;
-    }
-
-    //change bg color of Activity
-    public void setActivityBackgroundColor() {
-        view = this.getWindow().getDecorView();
-        int color = ((ColorDrawable) view.getBackground()).getColor();
-        switch (color) {
-            case FADED_RED:
-                view.setBackgroundResource(R.color.light_grey);
-                ivMood.setImageResource(R.drawable.bad_mood);
-                break;
-            case LIGHT_GREY:
-                view.setBackgroundResource(R.color.cornflower_blue);
-                ivMood.setImageResource(R.drawable.decent_mood);
-                break;
-            case CORNFLOWER_BLUE:
-                view.setBackgroundResource(R.color.light_sage);
-                ivMood.setImageResource(R.drawable.good_mood);
-                break;
-            case LIGHT_SAGE:
-                view.setBackgroundResource(R.color.banana_yellow);
-                ivMood.setImageResource(R.drawable.great_mood);
-                break;
-            case BANANA_YELLOW:
-                //do nothing- user must swipe up to go back through moods
-                break;
-        }
     }
 
     @Override
@@ -174,10 +145,55 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
     }
 
     private void onSwipeBottom() {
+        view = this.getWindow().getDecorView();
+        int color = ((ColorDrawable) view.getBackground()).getColor();
+        switch (color) {
+            case BANANA_YELLOW:
+                view.setBackgroundResource(R.color.light_sage);
+                ivMood.setImageResource(R.drawable.good_mood);
+                break;
+            case LIGHT_SAGE:
+                view.setBackgroundResource(R.color.cornflower_blue);
+                ivMood.setImageResource(R.drawable.decent_mood);
+                break;
+            case CORNFLOWER_BLUE:
+                view.setBackgroundResource(R.color.warm_grey);
+                ivMood.setImageResource(R.drawable.bad_mood);
+                break;
+            case WARM_GREY:
+                view.setBackgroundResource(R.color.faded_red);
+                ivMood.setImageResource(R.drawable.sad_mood);
+                break;
+            case FADED_RED:
+                //do nothing - user must swipe upwards to change back to previous mood
+                break;
+        }
     }
 
     public void onSwipeTop() {
-        setActivityBackgroundColor();
+        view = this.getWindow().getDecorView();
+        int color = ((ColorDrawable) view.getBackground()).getColor();
+        switch (color) {
+            case FADED_RED:
+                view.setBackgroundResource(R.color.warm_grey);
+                ivMood.setImageResource(R.drawable.bad_mood);
+                break;
+            case WARM_GREY:
+                view.setBackgroundResource(R.color.cornflower_blue);
+                ivMood.setImageResource(R.drawable.decent_mood);
+                break;
+            case CORNFLOWER_BLUE:
+                view.setBackgroundResource(R.color.light_sage);
+                ivMood.setImageResource(R.drawable.good_mood);
+                break;
+            case LIGHT_SAGE:
+                view.setBackgroundResource(R.color.banana_yellow);
+                ivMood.setImageResource(R.drawable.great_mood);
+                break;
+            case BANANA_YELLOW:
+                //do nothing- user must swipe up to go back through moods
+                break;
+        }
     }
 
     public void onSwipeRight() {

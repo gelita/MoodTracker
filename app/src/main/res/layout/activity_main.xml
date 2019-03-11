@@ -6,14 +6,11 @@
 
     <ImageView
         android:id="@+id/ivMood"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:contentDescription="@string/great_desc"
-        android:paddingLeft="40dp"
-        android:paddingTop="250dp"
-        android:paddingRight="40dp"
-        android:paddingBottom="250dp"
         android:src="@drawable/great_mood" />
 
     <ImageButton
