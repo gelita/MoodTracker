@@ -19,6 +19,8 @@ import android.widget.ImageView;
 
 import com.fanikiosoftware.moodtracker.R;
 
+import static java.lang.System.out;
+
 public class MainActivity extends AppCompatActivity implements OnTouchListener,
         GestureDetector.OnGestureListener {
 
@@ -26,9 +28,9 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener,
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;
     public static final int BANANA_YELLOW = -398257;
     public static final int LIGHT_SAGE = -4658810;
-    public static final int FADED_RED = -2212784;
-    public static final int WARM_GREY = -6579301;
     public static final int CORNFLOWER_BLUE = -16537100;
+    public static final int WARM_GREY = -6579301;
+    public static final int FADED_RED = -2212784;
 
     private ImageView ivMood;
     private EditText editText;
@@ -42,17 +44,12 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener,
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //checkNewUser();
-        //set default bg color for first play
         view = this.getWindow().getDecorView();
-        view.setBackgroundResource(R.color.faded_red);
-        setContentView(R.layout.activity_main);
-        ivMood = findViewById(R.id.ivMood);
-        ivMood.setImageResource(R.drawable.sad_mood);
+        mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        checkMood();
         ImageButton addButton = findViewById(R.id.btnAdd);
         ImageButton historyButton = findViewById(R.id.btnHistory);
-        //setup button listeners
-        mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        //set up listeners
         mGestureDetector = new GestureDetector(this);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +89,41 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener,
             }
         });
     }
+        private void checkMood() {
+            setContentView(R.layout.activity_main);
+            ivMood = findViewById(R.id.ivMood);
+            int mood = mPreferences.getInt(PREF_KEY_MOOD, 0);
+            //if a mood has been stored, display,
+            //else, default mood
+            if (mood < 0) {
+                switch(mood){
+                    case BANANA_YELLOW:
+                        ivMood.setImageResource(R.drawable.great_mood);
+                        view.setBackgroundResource(R.color.banana_yellow);
+                        break;
+                    case LIGHT_SAGE:
+                        ivMood.setImageResource(R.drawable.good_mood);
+                        view.setBackgroundResource(R.color.light_sage);
+                        break;
+                    case CORNFLOWER_BLUE:
+                        ivMood.setImageResource(R.drawable.decent_mood);
+                        view.setBackgroundResource(R.color.cornflower_blue);
+                        break;
+                    case WARM_GREY:
+                        ivMood.setImageResource(R.drawable.bad_mood);
+                        view.setBackgroundResource(R.color.warm_grey);
+                        break;
+                    case  FADED_RED:
+                        ivMood.setImageResource(R.drawable.sad_mood);
+                        view.setBackgroundResource(R.color.faded_red);
+                        break;
+                }
+            }else {
+                //set default mood and color if no mood was previously saved
+                ivMood.setImageResource(R.drawable.sad_mood);
+                view.setBackgroundResource(R.color.faded_red);
+            }
+    }
 
     //save memo from popup input dialog when user clicks on CONFIRM
     public void saveComment() {
@@ -99,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener,
         mPreferences.edit().putString(PREF_KEY_MEMO, comment).apply();
         System.out.println("PREF_KEY_MEMO: " + comment);
         int mood = ((ColorDrawable) view.getBackground()).getColor();
-        mPreferences.edit().putInt(PREF_KEY_MOOD,mood);
+        mPreferences.edit().putInt(PREF_KEY_MOOD, mood).apply();
         System.out.println("PREF_KEY_MOOD: " + mood);
     }
 
@@ -184,14 +216,6 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener,
         }
     }
 
-    public void onSwipeRight() {
-        // do nothing - ignore
-    }
-
-    public void onSwipeLeft() {
-        // do nothing -ignore
-    }
-
     @Override
     public boolean onDown(MotionEvent e) {
         return false;
@@ -213,5 +237,36 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener,
 
     @Override
     public void onLongPress(MotionEvent e) {
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        out.println("MainActivity::onStart()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        out.println("MainActivity::onStop()");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        out.println("MainActivity::onDestroy()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+       // mPreferences.edit().putInt(PREF_KEY_MOOD, ((ColorDrawable) view.getBackground()).getColor()).apply();
+        out.println("MainActivity::onPause()");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        out.println("MainActivity::onResume()");
     }
 }
