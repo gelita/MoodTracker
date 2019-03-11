@@ -19,7 +19,8 @@ import android.widget.ImageView;
 
 import com.fanikiosoftware.moodtracker.R;
 
-public class MainActivity extends AppCompatActivity implements OnTouchListener, GestureDetector.OnGestureListener {
+public class MainActivity extends AppCompatActivity implements OnTouchListener,
+        GestureDetector.OnGestureListener {
 
     public static final int SWIPE_THRESHOLD = 100;
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;
@@ -27,12 +28,13 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
     public static final int LIGHT_SAGE = -4658810;
     public static final int FADED_RED = -2212784;
     public static final int WARM_GREY = -6579301;
-    public static final int CORNFLOWER_BLUE= -16537100;
+    public static final int CORNFLOWER_BLUE = -16537100;
 
     private ImageView ivMood;
     private EditText editText;
     private Button btnCancel, btnConfirm;
-    public static final String PREF_KEY_MEMO1 = "PREFERENCE_KEY_MEMO1";
+    public static final String PREF_KEY_MEMO = "PREFERENCE_KEY_MEMO";
+    public static final String PREF_KEY_MOOD = "PREFERENCE_KEY_MOOD";
     private View view;
     private SharedPreferences mPreferences;
     private GestureDetector mGestureDetector;
@@ -91,11 +93,14 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
         });
     }
 
-    //save memo from popup input dialog
+    //save memo from popup input dialog when user clicks on CONFIRM
     public void saveComment() {
         String comment = editText.getText().toString().trim();
-        mPreferences.edit().putString(PREF_KEY_MEMO1, comment).apply();
-        System.out.println("PREF_KEY_MEMO1: " + comment);
+        mPreferences.edit().putString(PREF_KEY_MEMO, comment).apply();
+        System.out.println("PREF_KEY_MEMO: " + comment);
+        int mood = ((ColorDrawable) view.getBackground()).getColor();
+        mPreferences.edit().putInt(PREF_KEY_MOOD,mood);
+        System.out.println("PREF_KEY_MOOD: " + mood);
     }
 
     @Override
@@ -110,43 +115,28 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
     }
 
     @Override
-    public boolean onFling(MotionEvent downEvent, MotionEvent moveEvent, float velocityX, float velocityY) {
+    public boolean onFling(MotionEvent downEvent, MotionEvent moveEvent,
+                           float velocityX, float velocityY) {
         //did event get handled here? Assume the negative
         boolean result = false;
-        //greater mov't along x or y axis? This determines horiz. mov't vs vertical mov't
+        //gauge movement along y axis for determining if user swiped vertically
         float diffY = moveEvent.getY() - downEvent.getY();
-        float diffX = moveEvent.getX() - downEvent.getX();
-        //which axis had the greater movement? X or Y
-        //if mov't is horizontal -> ignore
-        if (Math.abs(diffX) > Math.abs(diffY)) {
-            //right or left swipe
-            if (Math.abs(diffX) > SWIPE_THRESHOLD &&
-                    Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
-                if (diffX > 0) {
-                    onSwipeRight();
-                } else {
-                    onSwipeLeft();
-                }
-                result = true;
+        //ignore all non-vertical swipe gestures
+        //handle vertical swipes
+        if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
+            int color = ((ColorDrawable) view.getBackground()).getColor();
+            if (diffY > 0) {
+                onSwipeBottom(color);
+            } else {
+                onSwipeTop(color);
             }
-        } else {
-            //recognize and responded to vertical up/down swipes
-            if (Math.abs(diffY) > SWIPE_THRESHOLD
-                    && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
-                if (diffY > 0) {
-                    onSwipeBottom();
-                } else {
-                    onSwipeTop();
-                }
-                result = true;
-            }
+            //gesture was handled within this method so result changed to TRUE
+            result = true;
         }
         return result;
     }
 
-    private void onSwipeBottom() {
-        view = this.getWindow().getDecorView();
-        int color = ((ColorDrawable) view.getBackground()).getColor();
+    private void onSwipeBottom(int color) {
         switch (color) {
             case BANANA_YELLOW:
                 view.setBackgroundResource(R.color.light_sage);
@@ -170,9 +160,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
         }
     }
 
-    public void onSwipeTop() {
-        view = this.getWindow().getDecorView();
-        int color = ((ColorDrawable) view.getBackground()).getColor();
+    public void onSwipeTop(int color) {
         switch (color) {
             case FADED_RED:
                 view.setBackgroundResource(R.color.warm_grey);
