@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <receiver
+            android:name=".MyAlarmReceiver"
+            android:process=":remote" >
+        </receiver>
+        <service
+            android:name=".AutoSaveService"
+            android:exported="false" />
         <activity android:name=".Controller.HistoryActivity"></activity>
-        <activity android:name=".Controller.MoodHistory" />
         <activity android:name=".Controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,5 +25,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
