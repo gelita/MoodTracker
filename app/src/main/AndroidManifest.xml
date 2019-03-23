@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fanikiosoftware.moodtracker">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +10,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <receiver
-            android:name=".MyAlarmReceiver"
-            android:process=":remote" >
-        </receiver>
-        <service
-            android:name=".AutoSaveService"
-            android:exported="false" />
         <activity android:name=".Controller.HistoryActivity"></activity>
         <activity android:name=".Controller.MainActivity">
             <intent-filter>

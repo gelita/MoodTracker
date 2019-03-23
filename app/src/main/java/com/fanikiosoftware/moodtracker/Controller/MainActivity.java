@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -16,8 +15,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.fanikiosoftware.moodtracker.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import static java.lang.System.out;
 
@@ -35,8 +37,22 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener,
     private ImageView ivMood;
     private EditText editText;
     private Button btnCancel, btnConfirm;
-    public static final String PREF_KEY_MEMO = "PREFERENCE_KEY_MEMO";
-    public static final String PREF_KEY_MOOD = "PREFERENCE_KEY_MOOD";
+    public static final String PREF_KEY_MEMO  = "PREFERENCE_KEY_MEMO";
+    public static final String PREF_KEY_MEMO2 = "PREFERENCE_KEY_MEMO";
+    public static final String PREF_KEY_MEMO3 = "PREFERENCE_KEY_MEMO";
+    public static final String PREF_KEY_MEMO4 = "PREFERENCE_KEY_MEMO";
+    public static final String PREF_KEY_MEMO5 = "PREFERENCE_KEY_MEMO";
+    public static final String PREF_KEY_MEMO6 = "PREFERENCE_KEY_MEMO";
+    public static final String PREF_KEY_MEMO7 = "PREFERENCE_KEY_MEMO";
+
+    public static final String PREF_KEY_MOOD  = "PREFERENCE_KEY_MOOD";
+    public static final String PREF_KEY_MOOD2 = "PREFERENCE_KEY_MOOD";
+    public static final String PREF_KEY_MOOD3 = "PREFERENCE_KEY_MOOD";
+    public static final String PREF_KEY_MOOD4 = "PREFERENCE_KEY_MOOD";
+    public static final String PREF_KEY_MOOD5 = "PREFERENCE_KEY_MOOD";
+    public static final String PREF_KEY_MOOD6 = "PREFERENCE_KEY_MOOD";
+    public static final String PREF_KEY_MOOD7 = "PREFERENCE_KEY_MOOD";
+
     private View view;
     private SharedPreferences mPreferences;
     private GestureDetector mGestureDetector;
@@ -130,6 +146,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener,
     //save memo from popup input dialog when user clicks on CONFIRM
     public void saveComment() {
         mPreferences.edit().putString(PREF_KEY_MEMO, editText.getText().toString().trim()).apply();
+        Toast.makeText(this, "Your memo has been saved!", Toast.LENGTH_SHORT).show();
     }
 
     //save the mood that is currently selected
@@ -137,6 +154,21 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener,
         mPreferences.edit().putInt(PREF_KEY_MOOD,
                 ((ColorDrawable) view.getBackground()).getColor()).apply();
     }
+
+//    public void saveAtMidnight(){
+//        String[] moodArr = new String[]{PREF_KEY_MOOD,PREF_KEY_MOOD2,PREF_KEY_MOOD3,PREF_KEY_MOOD4,
+//                PREF_KEY_MOOD5,PREF_KEY_MOOD6,PREF_KEY_MOOD7};
+//        String[] memoArr = new String[]{PREF_KEY_MEMO,PREF_KEY_MEMO2,PREF_KEY_MEMO3,PREF_KEY_MEMO4,
+//                PREF_KEY_MEMO5,PREF_KEY_MEMO6,PREF_KEY_MEMO7};
+//        //shift all moods AND memos up one day at midnight mood x becomes mood x+1, etc
+//        //mood7/memo7 are removed from the array and will no longer be displayed
+//        for(int i = 0; i< moodArr.length; i++){
+//            mPreferences.edit().putInt(moodArr[i+1],
+//                    mPreferences.getInt(moodArr[i],0)).apply();
+//            mPreferences.edit().putString(memoArr[i+1],
+//                    mPreferences.getString(memoArr[i],"")).apply();
+//        }
+//    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
