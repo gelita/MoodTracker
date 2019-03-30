@@ -14,16 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class HistoryActivity extends AppCompatActivity {
 
-    //message buttons by day btn1=1day ago..btn7=week ago
-    //private Button btnMemo1,btnMemo2,btnMemo3,btnMemo4,btnMemo5,btnMemo6,btnMemo7;
-    private RecyclerView recyclerView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-//        setActivityBackgroundColor(R.color.light_grey);
-        recyclerView = findViewById(R.id.recycler_view);
+        //message buttons by day btn1=1day ago..btn7=week ago
+        //private Button btnMemo1,btnMemo2,btnMemo3,btnMemo4,btnMemo5,btnMemo6,btnMemo7;
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
@@ -39,9 +36,4 @@ public class HistoryActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
-
-//    public void setActivityBackgroundColor(int color) {
-//        View view = this.getWindow().getDecorView();
-//        view.setBackgroundResource(color);
-//    }
 }

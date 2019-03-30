@@ -2,19 +2,19 @@ package com.fanikiosoftware.moodtracker.Model;
 
 public class ModelClass {
 
-    private int imageButton;
-    private String title;
+    private int moodId;
+    private String memo;
 
-    public ModelClass(int imageButton, String title){
-        this.imageButton = imageButton;
-        this.title = title;
+    public ModelClass(int moodId, String memo){
+        this.moodId = moodId;
+        this.memo = memo;
     }
 
-    public int getImageButton() {
-        return imageButton;
+    public int getMoodId() {
+        return moodId;
     }
 
-    public String getTitle() {
-        return  title;
+    public String getMemo() {
+        return  memo;
     }
 }

@@ -35,8 +35,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        int resource = modelClassList.get(position).getImageButton();
-        String title = modelClassList.get(position).getTitle();
+        int resource = modelClassList.get(position).getMoodId();
+        String title = modelClassList.get(position).getMemo();
         viewHolder.setData(resource, title);
     }
 
@@ -50,7 +50,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         private ImageButton imageButton;
         private TextView title;
 
-        public ViewHolder(@NonNull View itemView) {
+        private ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageButton = itemView.findViewById(R.id.btnImage);
             title = itemView.findViewById(R.id.tvTitle);
