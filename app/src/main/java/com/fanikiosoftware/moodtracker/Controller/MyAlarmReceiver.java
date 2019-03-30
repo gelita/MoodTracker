@@ -8,6 +8,6 @@ public class MyAlarmReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        System.out.println("broadcast rec'd");
+        System.out.println("MyAlarmReceiver:: Broadcast rec'd");
     }
 }
