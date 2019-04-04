@@ -13,20 +13,4 @@
     <string name="textview">TextView</string>
     <string name="message_button">Message button</string>
     <string name="title">title</string>
-    <string name="title_3">3 days ago</string>
-    <string name="title_6">6 days ago</string>
-    <string name="title_7">One week ago</string>
-    <string name="title_5">5 days ago</string>
-    <string name="title_4">4 days ago</string>
-    <string name="title_2">2 days ago</string>
-    <string name="title_1">1 day ago</string>
-    <string-array name="moodArray">
-        <item>One week ago</item>
-        <item>6 days ago</item>
-        <item>5 days ago</item>
-        <item>4 days ago</item>
-        <item>3 days ago</item>
-        <item>2 days ago</item>
-        <item>1 day ago</item>
-    </string-array>
 </resources>

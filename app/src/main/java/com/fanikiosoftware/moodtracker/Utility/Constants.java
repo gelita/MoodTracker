@@ -3,7 +3,9 @@ package com.fanikiosoftware.moodtracker.Utility;
 import com.fanikiosoftware.moodtracker.R;
 
 public final class Constants {
-    public static final String PREF_KEY_CURRENT_MOOD = "PREFERENCE_KEY_CURRENT_MOOD";
+
+
+
     public static final String PREF_KEY_MOOD1 = "PREFERENCE_KEY_MOOD1";
     public static final String PREF_KEY_MOOD2 = "PREFERENCE_KEY_MOOD2";
     public static final String PREF_KEY_MOOD3 = "PREFERENCE_KEY_MOOD3";
@@ -12,7 +14,6 @@ public final class Constants {
     public static final String PREF_KEY_MOOD6 = "PREFERENCE_KEY_MOOD6";
     public static final String PREF_KEY_MOOD7 = "PREFERENCE_KEY_MOOD7";
 
-    public static final String PREF_KEY_CURRENT_MEMO = "PREFERENCE_KEY_CURRENT_MEMO";
     public static final String PREF_KEY_MEMO1 = "PREFERENCE_KEY_MEMO1";
     public static final String PREF_KEY_MEMO2 = "PREFERENCE_KEY_MEMO2";
     public static final String PREF_KEY_MEMO3 = "PREFERENCE_KEY_MEMO3";
@@ -21,11 +22,25 @@ public final class Constants {
     public static final String PREF_KEY_MEMO6 = "PREFERENCE_KEY_MEMO6";
     public static final String PREF_KEY_MEMO7 = "PREFERENCE_KEY_MEMO7";
 
-    public static final int BANANA_YELLOW = -398257;
-    public static final int LIGHT_SAGE = -4658810;
-    public static final int CORNFLOWER_BLUE = -16537100;
-    public static final int WARM_GREY = -6579301;
-    public static final int FADED_RED = -2212784;
+    public static final String[] PREF_MOODS_ARR = {
+            PREF_KEY_MOOD1,
+            PREF_KEY_MOOD2,
+            PREF_KEY_MOOD3,
+            PREF_KEY_MOOD4,
+            PREF_KEY_MOOD5,
+            PREF_KEY_MOOD6,
+            PREF_KEY_MOOD7
+    };
+
+    public static final String[] PREF_MEMOS_ARR = {
+            PREF_KEY_MEMO1,
+            PREF_KEY_MEMO2,
+            PREF_KEY_MEMO3,
+            PREF_KEY_MEMO4,
+            PREF_KEY_MEMO5,
+            PREF_KEY_MEMO6,
+            PREF_KEY_MEMO7
+    };
 
     public static final int[] colorsArr = {
             R.color.banana_yellow,
@@ -34,6 +49,24 @@ public final class Constants {
             R.color.warm_grey,
             R.color.faded_red
     };
+    public static final String[] titles = {
+            "1 day ago",
+            "2 days ago",
+            "3 days ago",
+            "4 days ago",
+            "5 days ago",
+            "6 days ago",
+            "One week ago"
+    };
+
+
+    public static final int MOOD_GREAT = 0;
+    public static final int MOOD_GOOD = 1;
+    public static final int MOOD_DECENT = 2;
+    public static final int MOOD_SAD = 3;
+    public static final int MOOD_BAD = 4;
+
+    public static final int[] MOODS = {MOOD_GREAT, MOOD_GOOD, MOOD_DECENT, MOOD_SAD, MOOD_BAD};
 
     //Prevent objects from being constructed from
     //this class, by declaring this private constructor.
