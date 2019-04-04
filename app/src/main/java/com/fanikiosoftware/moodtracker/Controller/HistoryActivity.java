@@ -1,6 +1,5 @@
 package com.fanikiosoftware.moodtracker.Controller;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -8,6 +7,7 @@ import android.util.Log;
 
 import com.fanikiosoftware.moodtracker.Model.ModelClass;
 import com.fanikiosoftware.moodtracker.R;
+import com.fanikiosoftware.moodtracker.Utility.Constants;
 
 import java.util.ArrayList;
 
@@ -30,11 +30,23 @@ public class HistoryActivity extends AppCompatActivity {
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         int[] moodId = new int[7];
         String[] memo = new String[7];
-        int i;
-        for(i = 0; i < 7; i++) {
-               moodId[i] = mPreferences.getInt("PREF_KEY_MOOD" + i+1, -1);
-               memo[i] = mPreferences.getString("PREF_KEY_MEMO" + i+1, null);
-        }
+        modelClassList = new ArrayList<>();
+        moodId[0] = mPreferences.getInt(Constants.PREF_KEY_MOOD7, -1);
+        moodId[1] = mPreferences.getInt(Constants.PREF_KEY_MOOD6, -1);
+        moodId[2] = mPreferences.getInt(Constants.PREF_KEY_MOOD5, -1);
+        moodId[3] = mPreferences.getInt(Constants.PREF_KEY_MOOD4, -1);
+        moodId[4] = mPreferences.getInt(Constants.PREF_KEY_MOOD3, -1);
+        moodId[5] = mPreferences.getInt(Constants.PREF_KEY_MOOD2, -1);
+        moodId[6] = mPreferences.getInt(Constants.PREF_KEY_MOOD1, -1);
+
+        memo[0] = mPreferences.getString(Constants.PREF_KEY_MEMO7, "");
+        memo[1] = mPreferences.getString(Constants.PREF_KEY_MEMO6, "");
+        memo[2] = mPreferences.getString(Constants.PREF_KEY_MEMO5, "");
+        memo[3] = mPreferences.getString(Constants.PREF_KEY_MEMO4, "");
+        memo[4] = mPreferences.getString(Constants.PREF_KEY_MEMO3, "");
+        memo[5] = mPreferences.getString(Constants.PREF_KEY_MEMO2, "");
+        memo[6] = mPreferences.getString(Constants.PREF_KEY_MEMO1, "");
+
         modelClassList.add(new ModelClass(moodId[0], memo[0]));
         modelClassList.add(new ModelClass(moodId[1], memo[1]));
         modelClassList.add(new ModelClass(moodId[2], memo[2]));

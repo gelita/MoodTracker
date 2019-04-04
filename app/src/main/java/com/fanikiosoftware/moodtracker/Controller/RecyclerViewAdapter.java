@@ -24,6 +24,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private static final String TAG = "RecyclerViewAdapter";
     private ArrayList<ModelClass> modelClass;
     private Context mContext;
+    private String memo;
 
     public RecyclerViewAdapter(Context mContext, ArrayList<ModelClass> modelClass) {
         this.modelClass = modelClass;
@@ -38,7 +39,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 .inflate(R.layout.item_layout, parent, false);
         Log.d(TAG, "onCreateViewHolder: starting");
         int height = parent.getMeasuredHeight() / 7;
-        //??
         int width = parent.getMeasuredWidth();
         view.setLayoutParams(new RecyclerView.LayoutParams(width, height));
 //      create new ViewHolder object and pass the view to it
@@ -51,18 +51,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Log.d(TAG, "onBindViewHolder called");
         holder.title.setText(Constants.titles[position]);
         holder.parentLayout.setBackgroundColor(Constants.colorsArr[1]);
-        String memo = " ";
+        memo = this.modelClass.get(position).getMemo();
+        int color = this.modelClass.get(position).getMoodId();
+       System.out.print("color : "+ color);
         holder.btnImage.setImageResource(R.drawable.comment);
         if ((memo != null) || (!memo.isEmpty())) {
             holder.parentLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Log.d(TAG, "clicked on image from " + Constants.titles[position]);
-                    Toast.makeText(mContext, "This is the toast " +
-                            Constants.titles[position], Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, memo, Toast.LENGTH_SHORT).show();
                 }
             });
-        }else{
+        } else {
 //          if there is no memo, hide memo button
             holder.btnImage.setVisibility(View.INVISIBLE);
         }
