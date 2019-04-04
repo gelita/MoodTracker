@@ -50,13 +50,13 @@ public final class Constants {
             R.color.faded_red
     };
     public static final String[] titles = {
-            "1 day ago",
-            "2 days ago",
-            "3 days ago",
-            "4 days ago",
-            "5 days ago",
+            "One week ago",
             "6 days ago",
-            "One week ago"
+            "5 days ago",
+            "4 days ago",
+            "3 days ago",
+            "2 days ago",
+            "1 day ago"
     };
 
 

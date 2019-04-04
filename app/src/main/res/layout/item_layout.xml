@@ -26,12 +26,10 @@
         android:id="@+id/btnImage"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
         android:contentDescription="@string/message_button"
-        android:foregroundGravity="center_vertical"
-        app:layout_constraintStart_toEndOf="@+id/tvTitle"
-        app:layout_constraintTop_toTopOf="parent"
+        android:foregroundGravity="center"
         app:srcCompat="@drawable/comment" />
 </RelativeLayout>

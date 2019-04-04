@@ -57,7 +57,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             holder.parentLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d(TAG, "clicked on image: " + Constants.titles[position]);
+                    Log.d(TAG, "clicked on image from " + Constants.titles[position]);
                     Toast.makeText(mContext, "This is the toast " +
                             Constants.titles[position], Toast.LENGTH_SHORT).show();
                 }

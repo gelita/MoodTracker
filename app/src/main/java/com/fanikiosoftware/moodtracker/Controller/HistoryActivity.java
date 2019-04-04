@@ -35,13 +35,13 @@ public class HistoryActivity extends AppCompatActivity {
                moodId[i] = mPreferences.getInt("PREF_KEY_MOOD" + i+1, -1);
                memo[i] = mPreferences.getString("PREF_KEY_MEMO" + i+1, null);
         }
-        modelClassList.add(new ModelClass(moodId[6], memo[6]));
-        modelClassList.add(new ModelClass(moodId[5], memo[5]));
-        modelClassList.add(new ModelClass(moodId[4], memo[4]));
-        modelClassList.add(new ModelClass(moodId[3], memo[3]));
-        modelClassList.add(new ModelClass(moodId[2], memo[2]));
-        modelClassList.add(new ModelClass(moodId[1], memo[1]));
         modelClassList.add(new ModelClass(moodId[0], memo[0]));
+        modelClassList.add(new ModelClass(moodId[1], memo[1]));
+        modelClassList.add(new ModelClass(moodId[2], memo[2]));
+        modelClassList.add(new ModelClass(moodId[3], memo[3]));
+        modelClassList.add(new ModelClass(moodId[4], memo[4]));
+        modelClassList.add(new ModelClass(moodId[5], memo[5]));
+        modelClassList.add(new ModelClass(moodId[6], memo[6]));
         initRecyclerView();
     }
 
