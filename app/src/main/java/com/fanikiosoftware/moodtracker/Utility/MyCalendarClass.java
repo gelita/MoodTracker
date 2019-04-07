@@ -4,12 +4,15 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.fanikiosoftware.moodtracker.Controller.MyAlarmReceiver;
 
 import java.util.Calendar;
 
 public class MyCalendarClass {
+
+    private static final String TAG = "MyCalendarClass";
 
 //      set alarm intent so that app updates moods at midnight daily
     public static void setAlarm(Context context) {
@@ -28,6 +31,6 @@ public class MyCalendarClass {
         alarmMgr.setRepeating(
                 AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pIntent
         );
-        System.out.println("MyCalendarClass:: alarm set");
+        Log.d(TAG,"alarm set");
     }
 }

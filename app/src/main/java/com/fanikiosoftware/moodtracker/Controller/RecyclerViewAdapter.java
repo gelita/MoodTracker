@@ -1,6 +1,8 @@
 package com.fanikiosoftware.moodtracker.Controller;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,19 +27,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private ArrayList<ModelClass> modelClass;
     private Context mContext;
     private String memo;
+    private int moodId;
 
     public RecyclerViewAdapter(Context mContext, ArrayList<ModelClass> modelClass) {
         this.modelClass = modelClass;
         this.mContext = mContext;
     }
 
-    //    method responsible for inflating the layout view
+//    method responsible for inflating the layout view
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_layout, parent, false);
-        Log.d(TAG, "onCreateViewHolder: starting");
+        Log.d(TAG, "starting");
         int height = parent.getMeasuredHeight() / 7;
         int width = parent.getMeasuredWidth();
         view.setLayoutParams(new RecyclerView.LayoutParams(width, height));
@@ -48,31 +51,27 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
-        Log.d(TAG, "onBindViewHolder called");
+        Log.d(TAG, "onBindViewHolder started");
+        Log.d(TAG, "position:: " + position);//position->0-6
+
+        moodId = modelClass.get(position).getMoodId();
+        memo = modelClass.get(position).getMemo();
+        Log.d(TAG, "moodId::" + moodId + "  memo::" + memo + "."); //moodId-> 0-5
+        holder.itemView.setBackgroundColor(Color.parseColor(Constants.colorsArr[moodId]));
         holder.title.setText(Constants.titles[position]);
-        holder.parentLayout.setBackgroundColor(Constants.colorsArr[1]);
-        memo = this.modelClass.get(position).getMemo();
-        int color = this.modelClass.get(position).getMoodId();
-       System.out.print("color : "+ color);
         holder.btnImage.setImageResource(R.drawable.comment);
-        if ((memo != null) || (!memo.isEmpty())) {
-            holder.parentLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.d(TAG, "clicked on image from " + Constants.titles[position]);
-                    Toast.makeText(mContext, memo, Toast.LENGTH_SHORT).show();
-                }
-            });
-        } else {
-//          if there is no memo, hide memo button
-            holder.btnImage.setVisibility(View.INVISIBLE);
-        }
+        holder.btnImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "clicked on image from " + Constants.titles[position]);
+                Toast.makeText(mContext, memo, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        System.out.println("titles length: " + Constants.titles.length);
-        return Constants.titles.length;
+        return Constants.titles.length; //7
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

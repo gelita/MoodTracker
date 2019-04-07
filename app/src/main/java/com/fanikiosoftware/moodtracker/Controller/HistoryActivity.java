@@ -19,7 +19,7 @@ public class HistoryActivity extends AppCompatActivity {
 
     private static final String TAG = "HistoryActivity";
 
-    ArrayList<ModelClass> modelClassList = new ArrayList<>();
+    ArrayList<ModelClass> list = new ArrayList<>();
     private SharedPreferences mPreferences;
 
     @Override
@@ -30,7 +30,6 @@ public class HistoryActivity extends AppCompatActivity {
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         int[] moodId = new int[7];
         String[] memo = new String[7];
-        modelClassList = new ArrayList<>();
         moodId[0] = mPreferences.getInt(Constants.PREF_KEY_MOOD7, -1);
         moodId[1] = mPreferences.getInt(Constants.PREF_KEY_MOOD6, -1);
         moodId[2] = mPreferences.getInt(Constants.PREF_KEY_MOOD5, -1);
@@ -47,20 +46,17 @@ public class HistoryActivity extends AppCompatActivity {
         memo[5] = mPreferences.getString(Constants.PREF_KEY_MEMO2, "");
         memo[6] = mPreferences.getString(Constants.PREF_KEY_MEMO1, "");
 
-        modelClassList.add(new ModelClass(moodId[0], memo[0]));
-        modelClassList.add(new ModelClass(moodId[1], memo[1]));
-        modelClassList.add(new ModelClass(moodId[2], memo[2]));
-        modelClassList.add(new ModelClass(moodId[3], memo[3]));
-        modelClassList.add(new ModelClass(moodId[4], memo[4]));
-        modelClassList.add(new ModelClass(moodId[5], memo[5]));
-        modelClassList.add(new ModelClass(moodId[6], memo[6]));
+        for (int i = 0 ; i <7; i++) {
+            ModelClass modelClass = new ModelClass(moodId[i], memo[i]);
+            list.add(i, modelClass);
+        }
         initRecyclerView();
     }
 
     private void initRecyclerView(){
-        Log.d(TAG, "initRecyclerView: initRecyclerView: started");
+        Log.d(TAG, "initRecyclerView:: started");
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, modelClassList);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
