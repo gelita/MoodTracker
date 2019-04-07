@@ -31,5 +31,6 @@
         android:contentDescription="@string/message_button"
         android:foregroundGravity="center"
         android:padding="10dp"
+        android:visibility="invisible"
         app:srcCompat="@drawable/comment" />
 </RelativeLayout>

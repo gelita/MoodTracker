@@ -2,6 +2,7 @@ package com.fanikiosoftware.moodtracker.Controller;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,7 +35,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.mContext = mContext;
     }
 
-//    method responsible for inflating the layout view
+    //    method responsible for inflating the layout view
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -60,34 +61,37 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Log.d(TAG, "moodId::" + moodId + "  memo::" + memo + "."); //moodId-> 0-5
         holder.itemView.setBackgroundColor(Color.parseColor(Constants.colorsArr[moodId]));
         holder.title.setText(Constants.titles[position]);
-        holder.btnImage.setImageResource(R.drawable.comment);
-        holder.btnImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "clicked on image from " + Constants.titles[position]);
-                Toast.makeText(mContext, modelClass.get(position).getMemo(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    @Override
-    public int getItemCount() {
-        return Constants.titles.length; //7
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
-        private static final String TAG = "ViewHolder";
-        private RelativeLayout parentLayout;
-        private TextView title;
-        private ImageButton btnImage;
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            Log.d(TAG, "ViewHolder: setting up views");
-            parentLayout = itemView.findViewById(R.id.parent_layout);
-            title = itemView.findViewById(R.id.tvTitle);
-            btnImage = itemView.findViewById(R.id.btnImage);
+//        if memo exists then show comment button AND set onClickListener
+        if (!memo.isEmpty()){
+            holder.btnImage.setVisibility(View.VISIBLE);
+            holder.btnImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d(TAG, "clicked on image from " + Constants.titles[position]);
+                    Toast.makeText(mContext, modelClass.get(position).getMemo(), Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
-}
+
+        @Override
+        public int getItemCount () {
+            return Constants.titles.length; //7
+        }
+
+        public class ViewHolder extends RecyclerView.ViewHolder {
+
+            private static final String TAG = "ViewHolder";
+            private RelativeLayout parentLayout;
+            private TextView title;
+            private ImageButton btnImage;
+
+            public ViewHolder(@NonNull View itemView) {
+                super(itemView);
+                Log.d(TAG, "ViewHolder: setting up views");
+                parentLayout = itemView.findViewById(R.id.parent_layout);
+                title = itemView.findViewById(R.id.tvTitle);
+                btnImage = itemView.findViewById(R.id.btnImage);
+            }
+        }
+    }
