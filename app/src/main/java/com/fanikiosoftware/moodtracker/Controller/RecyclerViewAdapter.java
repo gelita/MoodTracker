@@ -49,11 +49,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return holder;
     }
 
+
+    //this method recycles the view using the ViewHolder
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder started");
         Log.d(TAG, "position:: " + position);//position->0-6
-
         moodId = modelClass.get(position).getMoodId();
         memo = modelClass.get(position).getMemo();
         Log.d(TAG, "moodId::" + moodId + "  memo::" + memo + "."); //moodId-> 0-5
@@ -64,7 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "clicked on image from " + Constants.titles[position]);
-                Toast.makeText(mContext, memo, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, modelClass.get(position).getMemo(), Toast.LENGTH_SHORT).show();
             }
         });
     }
