@@ -2,7 +2,6 @@ package com.fanikiosoftware.moodtracker.Controller;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;

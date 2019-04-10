@@ -55,7 +55,7 @@ public class MyAlarmReceiver extends BroadcastReceiver {
         mPreferences.edit().putString(Constants.PREF_KEY_MEMO3, memo3).apply();
         mPreferences.edit().putString(Constants.PREF_KEY_MEMO2, memo2).apply();
         mPreferences.edit().putString(Constants.PREF_KEY_MEMO1, memo1).apply();
-        mPreferences.edit().putString(Constants.PREF_KEY_CURRENT_MEMO, "hello").apply();
+        mPreferences.edit().putString(Constants.PREF_KEY_CURRENT_MEMO, null).apply();
         MainActivity.selectedMoodId = Constants.MOOD_GREAT;
     }
 }

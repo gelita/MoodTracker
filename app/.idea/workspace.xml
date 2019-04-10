@@ -12,16 +12,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="659b9a2c-681a-45e0-af85-29e188dc5b87" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/res/raw/beep.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/HistoryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/HistoryActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/BootReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/BootReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MyAlarmReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MyAlarmReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/RecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/RecyclerViewAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/MyCalendarClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/MyCalendarClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_history.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/item_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,33 +65,33 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gradle" value="2" />
-          <entry key="java" value="87" />
+          <entry key="java" value="97" />
           <entry key="png" value="18" />
-          <entry key="xml" value="51" />
+          <entry key="xml" value="53" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="2" />
           <entry key="Image" value="18" />
-          <entry key="JAVA" value="87" />
-          <entry key="XML" value="51" />
+          <entry key="JAVA" value="97" />
+          <entry key="XML" value="53" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="32" />
-          <entry key="java" value="19644" />
+          <entry key="java" value="20543" />
           <entry key="txt" value="100" />
-          <entry key="xml" value="2019" />
+          <entry key="xml" value="2021" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="32" />
-          <entry key="JAVA" value="19644" />
+          <entry key="JAVA" value="20543" />
           <entry key="PLAIN_TEXT" value="100" />
-          <entry key="XML" value="2019" />
+          <entry key="XML" value="2021" />
         </counts>
       </usages-collector>
     </session>
@@ -103,10 +102,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4872">
+              <caret line="228" column="22" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#checkMood#0;class#MainActivity#0" />
+                <element signature="method#saveMemo#0;class#MainActivity#0" />
+                <element signature="method#saveMood#0;class#MainActivity#0" />
+                <element signature="method#onTouchEvent#0;class#MainActivity#0" />
+                <element signature="method#onTouch#0;class#MainActivity#0" />
+                <element signature="e#9568#9569#0" expanded="true" />
+                <element signature="e#9596#9597#0" expanded="true" />
+                <element signature="e#9727#9728#0" expanded="true" />
+                <element signature="e#9755#9756#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MyAlarmReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="57" column="78" selection-start-line="57" selection-start-column="78" selection-end-line="57" selection-end-column="78" />
+            <state relative-caret-position="1624">
+              <caret line="58" column="59" lean-forward="true" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,21 +134,54 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/item_layout.xml">
-          <provider editor-type-id="android-designer2" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/HistoryActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="868">
+              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/HistoryActivity.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/BootReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state relative-caret-position="336">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="19" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="563">
+              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/MyCalendarClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1064">
+              <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,13 +192,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/RecyclerViewAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3481#3482#0" expanded="true" />
-                <element signature="e#3527#3528#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="112">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Model/ModelClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -163,8 +220,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>m</find>
-      <find>Broadcas</find>
       <find>rec</find>
       <find>_MOOD</find>
       <find>class</find>
@@ -193,6 +248,8 @@
       <find>Rel</find>
       <find>save</find>
       <find>sele</find>
+      <find>colorsArr</find>
+      <find>&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>add</replace>
@@ -220,7 +277,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Model/MyAlarmReceiver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Model/MyAlarmBroadcastReceiver.java" />
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/BootReceiver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/Adapter.java" />
         <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/main/res/drawable/comment.xml" />
@@ -228,12 +284,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/HistoryActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_history.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/MyCalendarClass.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/Constants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/RecyclerViewAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MyAlarmReceiver.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/item_layout.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/MyCalendarClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/RecyclerViewAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/BootReceiver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MyAlarmReceiver.java" />
       </list>
     </option>
   </component>
@@ -259,6 +316,11 @@
             <path>
               <item name="MoodTracker" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
+            </path>
+            <path>
+              <item name="MoodTracker" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
@@ -279,24 +341,19 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="moodtracker" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MoodTracker" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="moodtracker" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="Utility" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MoodTracker" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="MoodTracker" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="MoodTracker" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -315,24 +372,24 @@
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="Nexus_6_API_28" />
+    <property name="device.picker.selection" value="988a1c465041534657" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/res/drawable-mdpi" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/res/drawable" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\drawable-mdpi" />
-      <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\drawable-hdpi" />
-      <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\drawable" />
-      <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\drawable-xxxhdpi" />
-      <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\drawable-xxhdpi" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\drawable" />
       <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\drawable-mdpi" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\raw" />
+      <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\drawable-mdpi" />
+      <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\drawable-hdpi" />
+      <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\drawable" />
+      <recent name="C:\Users\fanik\AndroidStudioProjects\MoodTracker\app\src\main\res\drawable-xxxhdpi" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -368,7 +425,7 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="Nexus_6_API_28" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
@@ -442,7 +499,7 @@
       <window_info id="Image Layers" order="5" />
       <window_info id="Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
-      <window_info anchor="bottom" id="Find" order="0" weight="0.32853982" />
+      <window_info anchor="bottom" id="Find" order="0" weight="0.3281768" />
       <window_info anchor="bottom" id="Problems" order="1" weight="0.32939914" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946293" weight="0.49613258" />
       <window_info anchor="bottom" id="TODO" order="3" weight="0.32928178" />
@@ -452,7 +509,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.09060773" />
       <window_info anchor="bottom" id="Android Profiler" order="9" weight="0.32964602" />
-      <window_info active="true" anchor="bottom" x="32" y="396" width="1856" height="318" id="Logcat" order="10" sideWeight="0.4989259" visible="true" weight="0.48839778" />
+      <window_info active="true" anchor="bottom" x="32" y="396" width="1856" height="318" id="Logcat" order="10" sideWeight="0.4989259" visible="true" weight="0.42209944" />
       <window_info anchor="right" id="Preview" order="0" weight="0.433942" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" weight="0.32975295" />
@@ -561,21 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/BootReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/popup_input_dialog.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
@@ -584,13 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Model/ModelClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -655,13 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_history.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
@@ -670,68 +698,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/Constants.java">
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1036">
-          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3584">
-          <caret line="292" column="19" selection-start-line="292" selection-start-column="19" selection-end-line="292" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onTouch#0;class#MainActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/MyCalendarClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/RecyclerViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3481#3482#0" expanded="true" />
-            <element signature="e#3527#3528#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MyAlarmReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="57" column="78" selection-start-line="57" selection-start-column="78" selection-end-line="57" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/HistoryActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="224">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/item_layout.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="396">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/MyCalendarClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1064">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Model/ModelClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/RecyclerViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4872">
+          <caret line="228" column="22" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#checkMood#0;class#MainActivity#0" />
+            <element signature="method#saveMemo#0;class#MainActivity#0" />
+            <element signature="method#saveMood#0;class#MainActivity#0" />
+            <element signature="method#onTouchEvent#0;class#MainActivity#0" />
+            <element signature="method#onTouch#0;class#MainActivity#0" />
+            <element signature="e#9568#9569#0" expanded="true" />
+            <element signature="e#9596#9597#0" expanded="true" />
+            <element signature="e#9727#9728#0" expanded="true" />
+            <element signature="e#9755#9756#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/HistoryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/BootReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MyAlarmReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1624">
+          <caret line="58" column="59" lean-forward="true" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

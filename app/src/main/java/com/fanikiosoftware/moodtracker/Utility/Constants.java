@@ -1,5 +1,7 @@
 package com.fanikiosoftware.moodtracker.Utility;
 
+import com.fanikiosoftware.moodtracker.R;
+
 public final class Constants {
 
     public static final String PREF_KEY_CURRENT_MOOD = "PREFERENCE_KEY_CURRENT_MOOD";
@@ -28,7 +30,13 @@ public final class Constants {
             "#ffde3c50",
             "#d3d3d3"
     };
-
+    public static final int[] emojiArr = {
+            R.drawable.great_mood,
+            R.drawable.good_mood,
+            R.drawable.decent_mood,
+            R.drawable.bad_mood,
+            R.drawable.sad_mood
+    };
     public static final int MOOD_GREAT = 0;
     public static final int MOOD_GOOD = 1;
     public static final int MOOD_DECENT = 2;
