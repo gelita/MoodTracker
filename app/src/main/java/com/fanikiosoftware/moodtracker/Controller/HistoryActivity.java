@@ -30,13 +30,13 @@ public class HistoryActivity extends AppCompatActivity {
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         int[] moodId = new int[7];
         String[] memo = new String[7];
-        moodId[0] = mPreferences.getInt(Constants.PREF_KEY_MOOD7, -1);
-        moodId[1] = mPreferences.getInt(Constants.PREF_KEY_MOOD6, -1);
-        moodId[2] = mPreferences.getInt(Constants.PREF_KEY_MOOD5, -1);
-        moodId[3] = mPreferences.getInt(Constants.PREF_KEY_MOOD4, -1);
-        moodId[4] = mPreferences.getInt(Constants.PREF_KEY_MOOD3, -1);
-        moodId[5] = mPreferences.getInt(Constants.PREF_KEY_MOOD2, -1);
-        moodId[6] = mPreferences.getInt(Constants.PREF_KEY_MOOD1, -1);
+        moodId[0] = mPreferences.getInt(Constants.PREF_KEY_MOOD7, 5);
+        moodId[1] = mPreferences.getInt(Constants.PREF_KEY_MOOD6, 5);
+        moodId[2] = mPreferences.getInt(Constants.PREF_KEY_MOOD5, 5);
+        moodId[3] = mPreferences.getInt(Constants.PREF_KEY_MOOD4, 5);
+        moodId[4] = mPreferences.getInt(Constants.PREF_KEY_MOOD3, 5);
+        moodId[5] = mPreferences.getInt(Constants.PREF_KEY_MOOD2, 5);
+        moodId[6] = mPreferences.getInt(Constants.PREF_KEY_MOOD1, 5);
 
         memo[0] = mPreferences.getString(Constants.PREF_KEY_MEMO7, "");
         memo[1] = mPreferences.getString(Constants.PREF_KEY_MEMO6, "");

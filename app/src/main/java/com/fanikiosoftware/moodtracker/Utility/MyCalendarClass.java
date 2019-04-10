@@ -27,6 +27,9 @@ public class MyCalendarClass {
         calendar.add(Calendar.MINUTE, 0);
         calendar.add(Calendar.SECOND, 0);
         calendar.add(Calendar.MILLISECOND, 0);
+//      cancel previously set pending alarm intents
+        alarmMgr.cancel(pIntent);
+        Log.d(TAG,":: prior pIntent cancelled" );
 //      RTC fires the pending intent at the specific time but does not wake up the device.
         alarmMgr.setRepeating(
                 AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pIntent

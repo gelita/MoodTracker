@@ -1,7 +1,5 @@
 package com.fanikiosoftware.moodtracker.Utility;
 
-import com.fanikiosoftware.moodtracker.R;
-
 public final class Constants {
 
     public static final String PREF_KEY_CURRENT_MOOD = "PREFERENCE_KEY_CURRENT_MOOD";
@@ -22,28 +20,8 @@ public final class Constants {
     public static final String PREF_KEY_MEMO6 = "PREFERENCE_KEY_MEMO6";
     public static final String PREF_KEY_MEMO7 = "PREFERENCE_KEY_MEMO7";
 
-    public static final String[] PREF_MOODS_ARR = {
-            PREF_KEY_MOOD1,
-            PREF_KEY_MOOD2,
-            PREF_KEY_MOOD3,
-            PREF_KEY_MOOD4,
-            PREF_KEY_MOOD5,
-            PREF_KEY_MOOD6,
-            PREF_KEY_MOOD7
-    };
-
-    public static final String[] PREF_MEMOS_ARR = {
-            PREF_KEY_MEMO1,
-            PREF_KEY_MEMO2,
-            PREF_KEY_MEMO3,
-            PREF_KEY_MEMO4,
-            PREF_KEY_MEMO5,
-            PREF_KEY_MEMO6,
-            PREF_KEY_MEMO7
-    };
-
     public static final String[] colorsArr = {
-            "#fff9ecf4",
+            "#fff9ec4f",
             "#ffb8e986",
             "#03A9F4",
             "#ff9b9b9b",
@@ -51,14 +29,11 @@ public final class Constants {
             "#d3d3d3"
     };
 
-
     public static final int MOOD_GREAT = 0;
     public static final int MOOD_GOOD = 1;
     public static final int MOOD_DECENT = 2;
     public static final int MOOD_BAD = 3;
     public static final int MOOD_SAD = 4;
-
-    public static final int[] MOODS = {MOOD_GREAT, MOOD_GOOD, MOOD_DECENT, MOOD_BAD, MOOD_SAD};
 
     public static final String[] titles = {
             "One week ago",
@@ -69,8 +44,6 @@ public final class Constants {
             "2 days ago",
             "1 day ago"
     };
-
-
 
     //Prevent objects from being constructed from
     //this class, by declaring this private constructor.
