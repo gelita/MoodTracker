@@ -6,21 +6,13 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
     <option name="LOGCAT_FORMAT_STRING" value="%1$s %3$s %4$c/%5$s: %6$s" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="659b9a2c-681a-45e0-af85-29e188dc5b87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/res/raw/beep.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/BootReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/BootReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MyAlarmReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MyAlarmReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/RecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/RecyclerViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/MyCalendarClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/MyCalendarClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/item_layout.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +41,7 @@
     <session id="207598028">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.19" value="1" />
@@ -101,11 +93,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4872">
-              <caret line="228" column="22" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
+            <state relative-caret-position="28">
+              <caret line="290" column="29" selection-start-line="289" selection-start-column="10" selection-end-line="290" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#checkMood#0;class#MainActivity#0" />
@@ -122,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MyAlarmReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1624">
-              <caret line="58" column="59" lean-forward="true" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
+              <caret line="58" column="59" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -285,12 +277,12 @@
         <option value="$PROJECT_DIR$/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_history.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/item_layout.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Utility/MyCalendarClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/RecyclerViewAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/BootReceiver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MyAlarmReceiver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -489,7 +481,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.5008" side_tool="true" weight="0.23630504" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49892703" visible="true" weight="0.16809882" />
@@ -509,7 +500,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.09060773" />
       <window_info anchor="bottom" id="Android Profiler" order="9" weight="0.32964602" />
-      <window_info active="true" anchor="bottom" x="32" y="396" width="1856" height="318" id="Logcat" order="10" sideWeight="0.4989259" visible="true" weight="0.42209944" />
+      <window_info active="true" anchor="bottom" x="32" y="396" width="1856" height="318" id="Logcat" order="10" sideWeight="0.4989259" visible="true" weight="0.4762431" />
       <window_info anchor="right" id="Preview" order="0" weight="0.433942" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" weight="0.32975295" />
@@ -744,25 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4872">
-          <caret line="228" column="22" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#checkMood#0;class#MainActivity#0" />
-            <element signature="method#saveMemo#0;class#MainActivity#0" />
-            <element signature="method#saveMood#0;class#MainActivity#0" />
-            <element signature="method#onTouchEvent#0;class#MainActivity#0" />
-            <element signature="method#onTouch#0;class#MainActivity#0" />
-            <element signature="e#9568#9569#0" expanded="true" />
-            <element signature="e#9596#9597#0" expanded="true" />
-            <element signature="e#9727#9728#0" expanded="true" />
-            <element signature="e#9755#9756#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
@@ -794,9 +766,28 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MyAlarmReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1624">
-          <caret line="58" column="59" lean-forward="true" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
+          <caret line="58" column="59" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fanikiosoftware/moodtracker/Controller/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="290" column="29" selection-start-line="289" selection-start-column="10" selection-end-line="290" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#checkMood#0;class#MainActivity#0" />
+            <element signature="method#saveMemo#0;class#MainActivity#0" />
+            <element signature="method#saveMood#0;class#MainActivity#0" />
+            <element signature="method#onTouchEvent#0;class#MainActivity#0" />
+            <element signature="method#onTouch#0;class#MainActivity#0" />
+            <element signature="e#9568#9569#0" expanded="true" />
+            <element signature="e#9596#9597#0" expanded="true" />
+            <element signature="e#9727#9728#0" expanded="true" />
+            <element signature="e#9755#9756#0" expanded="true" />
           </folding>
         </state>
       </provider>

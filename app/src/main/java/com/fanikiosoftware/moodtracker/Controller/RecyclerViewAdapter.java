@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +25,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private static final String TAG = "RecyclerViewAdapter";
     private ArrayList<ModelClass> modelClass;
     private Context mContext;
-    int height, width;
+    int height;
+    int width;
 
     public RecyclerViewAdapter(Context mContext, ArrayList<ModelClass> modelClass) {
         this.modelClass = modelClass;
@@ -38,12 +38,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Log.d(TAG, "starting");
+        Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.item_layout, parent, false);
         height = parent.getMeasuredHeight() / 7;
         width = parent.getMeasuredWidth();
-        view.setLayoutParams(new RecyclerView.LayoutParams(width, height));
-//      create new ViewHolder object and pass the view to it
+//        view.setLayoutParams(new RecyclerView.LayoutParams(width, height));
+////      create new ViewHolder object and pass the view to it
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -69,26 +70,48 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             });
         }
+        ViewGroup.LayoutParams layoutParams = holder.container.getLayoutParams();
+        layoutParams.height =  height;
+        float multiplier;
+        switch(moodId){
+            case 1:
+                multiplier = .8f;
+                break;
+            case 2:
+                multiplier = .6f;
+                break;
+            case 3:
+                multiplier = .4f;
+                break;
+            case 4:
+                multiplier = .2f;
+                break;
+            default:
+                multiplier =  1f;
+                break;
+        }
+        layoutParams.width = (int) (width*multiplier);
+        holder.container.setLayoutParams(layoutParams);
     }
-
     @Override
     public int getItemCount() {
         return Constants.titles.length;
     }
-
+//**********        ViewHolder Class      *********************
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private static final String TAG = "ViewHolder";
-        private LinearLayout parentLayout;
+
         private TextView title;
         private ImageButton btnImage;
+        private View container;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
+        public ViewHolder(@NonNull View view) {
+            super(view);
             Log.d(TAG, "ViewHolder: setting up views");
-            parentLayout = itemView.findViewById(R.id.parent_layout);
-            title = itemView.findViewById(R.id.tvTitle);
-            btnImage = itemView.findViewById(R.id.btnImage);
+            container = view.findViewById(R.id.parent_layout);
+            title = view.findViewById(R.id.tvTitle);
+            btnImage = view.findViewById(R.id.btnImage);
         }
     }
 }

@@ -19,7 +19,7 @@ public class MyCalendarClass {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, MyAlarmReceiver.class);
 //      pIntent grants permission to external applications to act on intent
-        PendingIntent pIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
+        PendingIntent pIntent = PendingIntent.getBroadcast(context,0, intent, 0);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
 //      user HOUR_OF_DAY for 24 hr clock & set to 0 for midnight
