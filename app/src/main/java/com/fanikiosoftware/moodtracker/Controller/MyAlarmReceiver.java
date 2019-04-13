@@ -46,7 +46,9 @@ public class MyAlarmReceiver extends BroadcastReceiver {
         mPreferences.edit().putInt(Constants.PREF_KEY_MOOD3, mood3).apply();
         mPreferences.edit().putInt(Constants.PREF_KEY_MOOD2, mood2).apply();
         mPreferences.edit().putInt(Constants.PREF_KEY_MOOD1, mood1).apply();
-        mPreferences.edit().putInt(Constants.PREF_KEY_CURRENT_MOOD, 0).apply();
+//      reset the current mood to 5 so that if not saved by user before next alarm
+//        it will show as grey in the history view
+        mPreferences.edit().putInt(Constants.PREF_KEY_CURRENT_MOOD, 5).apply();
 
         mPreferences.edit().putString(Constants.PREF_KEY_MEMO7, memo7).apply();
         mPreferences.edit().putString(Constants.PREF_KEY_MEMO6, memo6).apply();
@@ -55,6 +57,7 @@ public class MyAlarmReceiver extends BroadcastReceiver {
         mPreferences.edit().putString(Constants.PREF_KEY_MEMO3, memo3).apply();
         mPreferences.edit().putString(Constants.PREF_KEY_MEMO2, memo2).apply();
         mPreferences.edit().putString(Constants.PREF_KEY_MEMO1, memo1).apply();
+//      reset the current memo to null
         mPreferences.edit().putString(Constants.PREF_KEY_CURRENT_MEMO, null).apply();
         MainActivity.selectedMoodId = Constants.MOOD_GREAT;
     }
