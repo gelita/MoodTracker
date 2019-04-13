@@ -53,6 +53,7 @@ public class HistoryActivity extends AppCompatActivity {
         initRecyclerView();
     }
 
+//  initialize recyclerView and attach adapter / layout manager
     private void initRecyclerView(){
         Log.d(TAG, "initRecyclerView:: started");
         RecyclerView recyclerView = findViewById(R.id.recycler_view);

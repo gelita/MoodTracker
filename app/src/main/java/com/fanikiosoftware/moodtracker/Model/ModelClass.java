@@ -9,11 +9,12 @@ public class ModelClass {
         this.moodId = moodId;
         this.memo = memo;
     }
-
+//  returns the mood id in int form for access to arrays in the Constants class
     public int getMoodId() {
         return moodId;
     }
 
+//  returns the memo saved in Shared Preferences
     public String getMemo() {
         return  memo;
     }

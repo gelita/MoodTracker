@@ -25,31 +25,29 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private static final String TAG = "RecyclerViewAdapter";
     private ArrayList<ModelClass> modelClass;
     private Context mContext;
-    int height;
-    int width;
+    private int height;
+    private int width;
 
-    public RecyclerViewAdapter(Context mContext, ArrayList<ModelClass> modelClass) {
+    private RecyclerViewAdapter(Context mContext, ArrayList<ModelClass> modelClass) {
         this.modelClass = modelClass;
         this.mContext = mContext;
     }
 
-    //    method responsible for inflating the layout view
+//    method responsible for inflating the layout view
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Log.d(TAG, "starting");
-        Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.item_layout, parent, false);
         height = parent.getMeasuredHeight() / 7;
         width = parent.getMeasuredWidth();
-//        view.setLayoutParams(new RecyclerView.LayoutParams(width, height));
-////      create new ViewHolder object and pass the view to it
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+//      view.setLayoutParams(new RecyclerView.LayoutParams(width, height));
+//      create new ViewHolder object and pass the view to it
+        return new ViewHolder(view);
     }
 
-    //this method recycles the view using the ViewHolder
+//    this method recycles the view using the ViewHolder
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder started");
@@ -59,7 +57,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Log.d(TAG, "moodId::" + moodId + "  memo::" + memo + "."); //moodId-> 0-5
         holder.itemView.setBackgroundColor(Color.parseColor(Constants.colorsArr[moodId]));
         holder.title.setText(Constants.titles[position]);
-//        if memo exists, show comment button AND set onClickListener
+//      if memo exists, show comment button AND set onClickListener
         if (!memo.isEmpty()) {
             holder.btnImage.setVisibility(View.VISIBLE);
             holder.btnImage.setOnClickListener(new View.OnClickListener() {
@@ -93,12 +91,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         layoutParams.width = (int) (width*multiplier);
         holder.container.setLayoutParams(layoutParams);
     }
+
+//  get the number of items of type modelClass to display in recyclerView
     @Override
     public int getItemCount() {
         return Constants.titles.length;
     }
 //**********        ViewHolder Class      *********************
-    public class ViewHolder extends RecyclerView.ViewHolder {
+class ViewHolder extends RecyclerView.ViewHolder {
 
         private static final String TAG = "ViewHolder";
 
@@ -106,7 +106,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         private ImageButton btnImage;
         private View container;
 
-        public ViewHolder(@NonNull View view) {
+        ViewHolder(@NonNull View view) {
             super(view);
             Log.d(TAG, "ViewHolder: setting up views");
             container = view.findViewById(R.id.parent_layout);

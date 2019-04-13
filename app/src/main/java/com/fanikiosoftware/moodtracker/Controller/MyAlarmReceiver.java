@@ -46,8 +46,8 @@ public class MyAlarmReceiver extends BroadcastReceiver {
         mPreferences.edit().putInt(Constants.PREF_KEY_MOOD3, mood3).apply();
         mPreferences.edit().putInt(Constants.PREF_KEY_MOOD2, mood2).apply();
         mPreferences.edit().putInt(Constants.PREF_KEY_MOOD1, mood1).apply();
-//      reset the current mood to 5 so that if not saved by user before next alarm
-//        it will show as grey in the history view
+//      reset the current mood to 5 so that if mood is not saved by user before next alarm
+//      the mood will show as grey(the default empty mood) in the history view
         mPreferences.edit().putInt(Constants.PREF_KEY_CURRENT_MOOD, 5).apply();
 
         mPreferences.edit().putString(Constants.PREF_KEY_MEMO7, memo7).apply();
