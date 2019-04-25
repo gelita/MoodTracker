@@ -54,7 +54,7 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
 //  initialize recyclerView and attach adapter / layout manager
-    private void initRecyclerView(){
+    public void initRecyclerView(){
         Log.d(TAG, "initRecyclerView:: started");
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, list);

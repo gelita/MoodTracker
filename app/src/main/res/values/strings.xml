@@ -13,4 +13,5 @@
     <string name="textview">TextView</string>
     <string name="message_button">Message button</string>
     <string name="title">title</string>
+    <string name="button_share">Share button</string>
 </resources>

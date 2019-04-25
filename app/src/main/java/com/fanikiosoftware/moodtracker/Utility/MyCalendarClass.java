@@ -23,14 +23,13 @@ public class MyCalendarClass {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
 //      user HOUR_OF_DAY for 24 hr clock & set to 0 for midnight
-        calendar.add(Calendar.HOUR_OF_DAY, 0);
-        calendar.add(Calendar.MINUTE, 0);
-        calendar.add(Calendar.SECOND, 0);
-        calendar.add(Calendar.MILLISECOND, 0);
-//      cancel previously set pending alarm intents
-        alarmMgr.cancel(pIntent);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
         Log.d(TAG,":: prior pIntent cancelled" );
 //      RTC fires the pending intent at the specific time but does not wake up the device.
+        System.out.println(calendar.getTimeInMillis());
         alarmMgr.setRepeating(
                 AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pIntent
         );

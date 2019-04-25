@@ -1,6 +1,7 @@
 package com.fanikiosoftware.moodtracker.Controller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,17 +24,19 @@ import androidx.recyclerview.widget.RecyclerView;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";
+
     private ArrayList<ModelClass> modelClass;
     private Context mContext;
     private int height;
     private int width;
+    private int moodId;
 
-    private RecyclerViewAdapter(Context mContext, ArrayList<ModelClass> modelClass) {
+    public RecyclerViewAdapter(Context mContext, ArrayList<ModelClass> modelClass) {
         this.modelClass = modelClass;
         this.mContext = mContext;
     }
 
-//    method responsible for inflating the layout view
+    //    method responsible for inflating the layout view
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -47,17 +50,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return new ViewHolder(view);
     }
 
-//    this method recycles the view using the ViewHolder
+    //    this method recycles the view using the ViewHolder
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder started");
         Log.d(TAG, "position:: " + position);//position->0-6
-        int moodId = modelClass.get(position).getMoodId();
+        moodId = modelClass.get(position).getMoodId();
         String memo = modelClass.get(position).getMemo();
         Log.d(TAG, "moodId::" + moodId + "  memo::" + memo + "."); //moodId-> 0-5
         holder.itemView.setBackgroundColor(Color.parseColor(Constants.colorsArr[moodId]));
         holder.title.setText(Constants.titles[position]);
-//      if memo exists, show comment button AND set onClickListener
+//      if memo exists, show comment button, share button AND set onClickListener
         if (!memo.isEmpty()) {
             holder.btnImage.setVisibility(View.VISIBLE);
             holder.btnImage.setOnClickListener(new View.OnClickListener() {
@@ -68,10 +71,47 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             });
         }
+        if(moodId <= 4){
+            holder.btnShare.setVisibility(View.VISIBLE);
+            holder.btnShare.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+                    intent.setType("text/plain");
+                    String mood = "";
+                    switch(moodId){
+                        case 0:
+                            mood = "great!";
+                            break;
+                        case 1:
+                            mood = "good!";
+                            break;
+                        case 2:
+                            mood = "decent!";
+                            break;
+                        case 3:
+                            mood = "bad :(";
+                            break;
+                        case 4:
+                            mood = "sad :(";
+                            break;
+                    }
+                    String shareBody = Constants.titles[position]
+                            + " my mood was "
+                            + mood;
+                    String shareSubject = "Your subject here";
+                    intent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSubject);
+                    intent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                    mContext.startActivity(Intent.createChooser(intent, "Share using"));
+                }
+            });
+
+
+        }
         ViewGroup.LayoutParams layoutParams = holder.container.getLayoutParams();
-        layoutParams.height =  height;
+        layoutParams.height = height;
         float multiplier;
-        switch(moodId){
+        switch (moodId) {
             case 1:
                 multiplier = .8f;
                 break;
@@ -85,23 +125,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 multiplier = .2f;
                 break;
             default:
-                multiplier =  1f;
+                multiplier = 1f;
                 break;
         }
-        layoutParams.width = (int) (width*multiplier);
+        layoutParams.width = (int) (width * multiplier);
         holder.container.setLayoutParams(layoutParams);
     }
 
-//  get the number of items of type modelClass to display in recyclerView
+    //  get the number of items of type modelClass to display in recyclerView
     @Override
     public int getItemCount() {
         return Constants.titles.length;
     }
-//**********        ViewHolder Class      *********************
-class ViewHolder extends RecyclerView.ViewHolder {
+
+    //**********        ViewHolder Class      *********************
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         private static final String TAG = "ViewHolder";
-
+//        public MediaRouteButton btnShare;
+        private ImageButton btnShare;
         private TextView title;
         private ImageButton btnImage;
         private View container;
@@ -112,6 +154,7 @@ class ViewHolder extends RecyclerView.ViewHolder {
             container = view.findViewById(R.id.parent_layout);
             title = view.findViewById(R.id.tvTitle);
             btnImage = view.findViewById(R.id.btnImage);
+            btnShare = view.findViewById(R.id.btnShare);
         }
     }
 }
