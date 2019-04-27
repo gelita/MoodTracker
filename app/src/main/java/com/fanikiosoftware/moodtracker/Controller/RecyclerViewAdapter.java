@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";
@@ -31,7 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private int height;
     private int width;
 
-    private RecyclerViewAdapter(Context mContext, ArrayList<ModelClass> modelClass) {
+    public RecyclerViewAdapter(Context mContext, ArrayList<ModelClass> modelClass) {
         this.modelClass = modelClass;
         this.mContext = mContext;
     }
@@ -45,7 +44,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         View view = inflater.inflate(R.layout.item_layout, parent, false);
         height = parent.getMeasuredHeight() / 7;
         width = parent.getMeasuredWidth();
-//      view.setLayoutParams(new RecyclerView.LayoutParams(width, height));
 //      create new ViewHolder object and pass the view to it
         return new ViewHolder(view);
     }
