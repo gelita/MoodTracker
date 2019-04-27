@@ -27,6 +27,7 @@ public class MyCalendarClass {
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
+        alarmMgr.cancel(pIntent);
         Log.d(TAG,":: prior pIntent cancelled" );
 //      RTC fires the pending intent at the specific time but does not wake up the device.
         System.out.println(calendar.getTimeInMillis());

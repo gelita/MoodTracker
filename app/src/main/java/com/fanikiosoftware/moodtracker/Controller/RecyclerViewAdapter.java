@@ -3,6 +3,7 @@ package com.fanikiosoftware.moodtracker.Controller;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,9 +30,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private Context mContext;
     private int height;
     private int width;
-    private int moodId;
 
-    public RecyclerViewAdapter(Context mContext, ArrayList<ModelClass> modelClass) {
+    private RecyclerViewAdapter(Context mContext, ArrayList<ModelClass> modelClass) {
         this.modelClass = modelClass;
         this.mContext = mContext;
     }
@@ -55,7 +55,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder started");
         Log.d(TAG, "position:: " + position);//position->0-6
-        moodId = modelClass.get(position).getMoodId();
+        int moodId = modelClass.get(position).getMoodId();
         String memo = modelClass.get(position).getMemo();
         Log.d(TAG, "moodId::" + moodId + "  memo::" + memo + "."); //moodId-> 0-5
         holder.itemView.setBackgroundColor(Color.parseColor(Constants.colorsArr[moodId]));
@@ -71,42 +71,24 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             });
         }
-        if(moodId <= 4){
+        if (moodId <= 4) {
+            System.out.println("moodId is now: " + moodId);
             holder.btnShare.setVisibility(View.VISIBLE);
+            holder.btnShare.setBackground(Drawable.createFromPath(Constants.colorsArr[moodId]));
             holder.btnShare.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(android.content.Intent.ACTION_SEND);
                     intent.setType("text/plain");
-                    String mood = "";
-                    switch(moodId){
-                        case 0:
-                            mood = "great!";
-                            break;
-                        case 1:
-                            mood = "good!";
-                            break;
-                        case 2:
-                            mood = "decent!";
-                            break;
-                        case 3:
-                            mood = "bad :(";
-                            break;
-                        case 4:
-                            mood = "sad :(";
-                            break;
-                    }
+                    String mood = Constants.moods[modelClass.get(position).getMoodId()];
                     String shareBody = Constants.titles[position]
-                            + " my mood was "
-                            + mood;
+                            + " my mood was " + mood + ".";
                     String shareSubject = "Your subject here";
                     intent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSubject);
                     intent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                     mContext.startActivity(Intent.createChooser(intent, "Share using"));
                 }
             });
-
-
         }
         ViewGroup.LayoutParams layoutParams = holder.container.getLayoutParams();
         layoutParams.height = height;
@@ -142,7 +124,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     class ViewHolder extends RecyclerView.ViewHolder {
 
         private static final String TAG = "ViewHolder";
-//        public MediaRouteButton btnShare;
         private ImageButton btnShare;
         private TextView title;
         private ImageButton btnImage;

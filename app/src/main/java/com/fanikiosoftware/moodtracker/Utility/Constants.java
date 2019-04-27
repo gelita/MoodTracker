@@ -42,6 +42,13 @@ public final class Constants {
     public static final int MOOD_DECENT = 2;
     public static final int MOOD_BAD = 3;
     public static final int MOOD_SAD = 4;
+    public static final String[] moods = {
+            "great",
+            "good",
+            "decent",
+            "bad",
+            "sad"
+    };
 
     public static final String[] titles = {
             "One week ago",

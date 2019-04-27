@@ -10,41 +10,46 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
         android:text="@string/title"
         android:textColor="@android:color/black"
         android:textSize="12sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <ImageButton
         android:id="@+id/btnImage"
         android:layout_width="22dp"
         android:layout_height="22dp"
-        android:contentDescription="@string/message_button"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_centerInParent="true"
-        android:layout_marginRight="20dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:contentDescription="@string/message_button"
         android:visibility="invisible"
-        app:srcCompat="@drawable/comment"
-        />
+        app:srcCompat="@drawable/comment" />
+
     <ImageButton
         android:id="@+id/btnShare"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:visibility="invisible"
-        android:layout_toLeftOf="@+id/btnImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_centerInParent="true"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:src="@android:drawable/ic_menu_share"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_toStartOf="@+id/btnImage"
+        android:layout_toLeftOf="@+id/btnImage"
         android:actionProviderClass="android.widget.ShareActionProvider"
+        android:contentDescription="@string/share_button"
+        android:src="@android:drawable/ic_menu_share"
         android:tint="@android:color/black"
-        />
+        android:background="@color/banana_yellow"
+        android:visibility="invisible" />
 </RelativeLayout>
