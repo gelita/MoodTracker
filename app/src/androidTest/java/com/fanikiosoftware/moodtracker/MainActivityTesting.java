@@ -29,7 +29,7 @@ public class MainActivityTesting {
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
     @Test
-    public void mainActivityTest() {
+    public void testSaveMemoAndMood() {
 //        click on add button and then type in text
         Espresso.onView(withId(R.id.btnAdd)).perform(click());
         onView(withId(R.id.etComment))
@@ -38,5 +38,28 @@ public class MainActivityTesting {
                 .perform(click());
         onView(withId(R.id.etComment))
                 .check(matches(withText(TYPED_STRING)));
+    }
+//  test that mood saves without saving a memo and memo returns empty string
+    @Test
+    public void testSaveMoodOnly() {
+//        click on add button and then type in text
+        Espresso.onView(withId(R.id.btnAdd)).perform(click());
+        onView(withId(R.id.btnConfirm))
+                .perform(click());
+        onView(withId(R.id.etComment))
+                .check(matches(withText("")));
+    }
+
+//  test that neither mood nor memo save when cancel button is clicked
+    @Test
+    public void testCancelSaveMood() {
+//        click on add button and then type in text
+        Espresso.onView(withId(R.id.btnAdd)).perform(click());
+        onView(withId(R.id.etComment))
+                .perform(typeText(TYPED_STRING), closeSoftKeyboard());
+        onView(withId(R.id.btnCancel))
+                .perform(click());
+        onView(withId(R.id.etComment))
+                .check(matches(withText("")));
     }
 }
