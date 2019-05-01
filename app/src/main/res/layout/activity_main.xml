@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:contentDescription="@string/show_pie_chart"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:layout_toStartOf="@id/btnHistory"
         android:layout_toLeftOf="@+id/btnHistory"
         android:layout_toEndOf="@+id/btnAdd"
@@ -53,5 +53,4 @@
         android:background="@null"
         android:maxWidth="@android:dimen/app_icon_size"
         android:src="@drawable/ic_pie_chart" />
-
 </RelativeLayout>
