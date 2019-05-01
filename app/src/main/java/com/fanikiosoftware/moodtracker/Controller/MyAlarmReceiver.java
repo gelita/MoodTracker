@@ -59,6 +59,7 @@ public class MyAlarmReceiver extends BroadcastReceiver {
         mPreferences.edit().putString(Constants.PREF_KEY_MEMO1, memo1).apply();
 //      reset the current memo to null
         mPreferences.edit().putString(Constants.PREF_KEY_CURRENT_MEMO, null).apply();
+//      reset the current selectedMoodId to default Great Mood after saving user prefs
         MainActivity.selectedMoodId = Constants.MOOD_GREAT;
     }
 }

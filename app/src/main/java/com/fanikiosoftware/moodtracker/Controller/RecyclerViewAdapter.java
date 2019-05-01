@@ -69,6 +69,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             });
         }
+//      show share button & set onClickListener if moodId is one that was saved & not default grey
         if (moodId <= 4) {
             System.out.println("moodId is now: " + moodId);
             holder.btnShare.setVisibility(View.VISIBLE);

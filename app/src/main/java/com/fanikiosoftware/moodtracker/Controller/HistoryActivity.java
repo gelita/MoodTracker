@@ -28,6 +28,10 @@ public class HistoryActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: started");
         setContentView(R.layout.activity_history);
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        getData();
+        initRecyclerView();
+    }
+    public void getData(){
         int[] moodId = new int[7];
         String[] memo = new String[7];
         moodId[0] = mPreferences.getInt(Constants.PREF_KEY_MOOD7, 5);
@@ -50,7 +54,6 @@ public class HistoryActivity extends AppCompatActivity {
             ModelClass modelClass = new ModelClass(moodId[i], memo[i]);
             list.add(i, modelClass);
         }
-        initRecyclerView();
     }
 
 //  initialize recyclerView and attach adapter / layout manager

@@ -15,4 +15,6 @@
     <string name="title">title</string>
     <string name="button_share">Share button</string>
     <string name="share_button">Share button</string>
+    <string name="type_your_memo_here">Type your memo here</string>
+    <string name="show_pie_chart">Show pie chart</string>
 </resources>

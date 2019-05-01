@@ -37,6 +37,7 @@ public final class Constants {
             R.drawable.bad_mood,
             R.drawable.sad_mood
     };
+    public static final int[] moodInts = {0,1,2,3,4,5};
     public static final int MOOD_GREAT = 0;
     public static final int MOOD_GOOD = 1;
     public static final int MOOD_DECENT = 2;
