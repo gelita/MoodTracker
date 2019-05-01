@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
-import com.fanikiosoftware.moodtracker.Model.ModelClass;
 import com.fanikiosoftware.moodtracker.R;
 import com.fanikiosoftware.moodtracker.Utility.Constants;
 
@@ -21,7 +20,6 @@ public class PieChartActivity extends AppCompatActivity {
 
     PieChartView pieChartView;
     private SharedPreferences mPreferences;
-    ArrayList<ModelClass> list = new ArrayList<>();
     int[] moodId = new int[7];
 
     @Override
@@ -30,34 +28,35 @@ public class PieChartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pie_chart);
         pieChartView = findViewById(R.id.chart);
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-       getData();
+        getData();
+        //list to store mood data for the pie chart
         List chartData = new ArrayList<>();
-        for(int i = 0; i<7; i++) {
+        for (int i = 0; i < 7; i++) {
             int color = moodId[i];
-            if(color == 0) {
+            if (color == 0) {
                 color = Color.YELLOW;
-            }else if (color == 1){
+            } else if (color == 1) {
                 color = Color.GREEN;
-            }else if (color == 2) {
+            } else if (color == 2) {
                 color = Color.BLUE;
-            }else if (color == 3) {
+            } else if (color == 3) {
                 color = Color.DKGRAY;
-            }else if (color == 4) {
+            } else if (color == 4) {
                 color = Color.RED;
-            }else if (color == 5) {
+            } else if (color == 5) {
                 color = Color.LTGRAY;
             }
+            System.out.println("color is " + color);
             chartData.add(new SliceValue(10, color));
-            System.out.println(moodId[i]);
-            System.out.println("   ");
             PieChartData pieChartData = new PieChartData(chartData);
-//            pieChartData.setHasLabels(true).setValueLabelTextSize(14);
             pieChartData.setHasCenterCircle(true).setCenterText1("My Moods This Week")
                     .setCenterText1FontSize(20).setCenterText1Color(Color.BLUE);
             pieChartView.setPieChartData(pieChartData);
         }
     }
-    public void getData(){
+
+    //  get mood data from sharedPrefs
+    public void getData() {
         moodId[0] = mPreferences.getInt(Constants.PREF_KEY_MOOD7, 5);
         moodId[1] = mPreferences.getInt(Constants.PREF_KEY_MOOD6, 5);
         moodId[2] = mPreferences.getInt(Constants.PREF_KEY_MOOD5, 5);
