@@ -44,7 +44,6 @@ public class MainActivityTest {
 //      Type text and then press the button.
         onView(withId(etComment))
                 .perform(typeText(testString), closeSoftKeyboard());
-
         onView(allOf(withId(R.id.etComment))).check
                 (matches(withText(testString)));
     }
