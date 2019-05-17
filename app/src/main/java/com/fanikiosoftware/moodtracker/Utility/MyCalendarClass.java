@@ -14,7 +14,7 @@ public class MyCalendarClass {
 
     private static final String TAG = "MyCalendarClass";
 
-//      set alarm intent so that app updates moods at midnight daily
+    //      set alarm intent so that app updates moods at midnight daily
     public static void setAlarm(Context context) {
         Intent intent = new Intent(context, MyAlarmReceiver.class);
 //      pIntent grants permission to external applications to act on intent
@@ -34,7 +34,7 @@ public class MyCalendarClass {
         calendar.set(Calendar.MILLISECOND, 0);
 //      add 1 day to the calendar instance in order to prevent alarm from being called for past
 //        scheduled intent
-        calendar.add(Calendar.DATE,1 );
+        calendar.add(Calendar.DATE, 1);
 //      RTC fires the pending intent at the specific time but does not wake up the device.
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmMgr.cancel(pIntent);
@@ -44,6 +44,6 @@ public class MyCalendarClass {
                 AlarmManager.INTERVAL_DAY,
                 pIntent
         );
-        Log.d(TAG,"alarm set");
+        Log.d(TAG, "alarm set");
     }
 }

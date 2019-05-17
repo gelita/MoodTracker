@@ -1,14 +1,13 @@
 package com.fanikiosoftware.moodtracker.Controller;
 
+import androidx.test.filters.LargeTest;
+import androidx.test.rule.ActivityTestRule;
 
 import com.fanikiosoftware.moodtracker.R;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-
-import androidx.test.filters.LargeTest;
-import androidx.test.rule.ActivityTestRule;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;

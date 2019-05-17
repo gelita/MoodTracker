@@ -72,10 +72,4 @@ public class MoodTrackerUnitTest {
         int selectedMoodId = Constants.MOOD_SAD;
         assertEquals(4,selectedMoodId );
     }
-
-//    @Test
-//    public void checkTitles(){
-//        int selectedMoodId = Constants.MOOD_GREAT;
-//        assertEquals(0,selectedMoodId );
-//    }
 }
