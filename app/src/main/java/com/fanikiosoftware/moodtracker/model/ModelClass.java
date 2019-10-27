@@ -1,4 +1,4 @@
-package com.fanikiosoftware.moodtracker.Model;
+package com.fanikiosoftware.moodtracker.model;
 
 public class ModelClass {
 

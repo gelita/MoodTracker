@@ -1,4 +1,4 @@
-package com.fanikiosoftware.moodtracker.Utility;
+package com.fanikiosoftware.moodtracker.utility;
 
 import com.fanikiosoftware.moodtracker.R;
 

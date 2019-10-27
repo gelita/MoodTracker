@@ -1,15 +1,12 @@
-package com.fanikiosoftware.moodtracker.Controller;
+package com.fanikiosoftware.moodtracker.controller;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
-import com.fanikiosoftware.moodtracker.Utility.MyCalendarClass;
+import com.fanikiosoftware.moodtracker.utility.MyCalendarClass;
 
 public class BootReceiver extends BroadcastReceiver {
-
-    private static final String TAG = BootReceiver.class.getSimpleName();
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -18,7 +15,6 @@ public class BootReceiver extends BroadcastReceiver {
         assert action != null;
         if(action.equals("android.intent.action.BOOT_COMPLETED")){
             MyCalendarClass.setAlarm(context);
-            Log.d(TAG,"Boot Receiver: alarm set" );
         }
     }
 }

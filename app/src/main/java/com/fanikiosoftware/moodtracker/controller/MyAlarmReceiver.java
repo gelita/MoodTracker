@@ -1,13 +1,12 @@
-package com.fanikiosoftware.moodtracker.Controller;
+package com.fanikiosoftware.moodtracker.controller;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
-import com.fanikiosoftware.moodtracker.Utility.Constants;
+import com.fanikiosoftware.moodtracker.utility.Constants;
 
 public class MyAlarmReceiver extends BroadcastReceiver {
 
@@ -16,7 +15,6 @@ public class MyAlarmReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.d(TAG, "onReceive: starting");
         mPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         updateMoods();
     }

@@ -1,4 +1,4 @@
-package com.fanikiosoftware.moodtracker.Controller;
+package com.fanikiosoftware.moodtracker.controller;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 
 import com.fanikiosoftware.moodtracker.R;
-import com.fanikiosoftware.moodtracker.Utility.Constants;
+import com.fanikiosoftware.moodtracker.utility.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +18,9 @@ import lecho.lib.hellocharts.view.PieChartView;
 
 public class PieChartActivity extends AppCompatActivity {
 
-    PieChartView pieChartView;
+    private PieChartView pieChartView;
     private SharedPreferences mPreferences;
-    int[] moodId = new int[7];
+    private int[] moodId = new int[7];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,7 @@ public class PieChartActivity extends AppCompatActivity {
     }
 
     //  get mood data from sharedPrefs
-    public void getData() {
+    private void getData() {
         moodId[0] = mPreferences.getInt(Constants.PREF_KEY_MOOD7, 5);
         moodId[1] = mPreferences.getInt(Constants.PREF_KEY_MOOD6, 5);
         moodId[2] = mPreferences.getInt(Constants.PREF_KEY_MOOD5, 5);

@@ -1,10 +1,9 @@
-package com.fanikiosoftware.moodtracker.Controller;
+package com.fanikiosoftware.moodtracker.controller;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +11,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.fanikiosoftware.moodtracker.Model.ModelClass;
-import com.fanikiosoftware.moodtracker.R;
-import com.fanikiosoftware.moodtracker.Utility.Constants;
-
-import java.util.ArrayList;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.fanikiosoftware.moodtracker.model.ModelClass;
+import com.fanikiosoftware.moodtracker.R;
+import com.fanikiosoftware.moodtracker.utility.Constants;
+
+import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
@@ -39,7 +38,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Log.d(TAG, "starting");
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.item_layout, parent, false);
         height = parent.getMeasuredHeight() / 7;
@@ -51,11 +49,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     //    this method recycles the view using the ViewHolder
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
-        Log.d(TAG, "onBindViewHolder started");
-        Log.d(TAG, "position:: " + position);//position->0-6
         int moodId = modelClass.get(position).getMoodId();
         String memo = modelClass.get(position).getMemo();
-        Log.d(TAG, "moodId::" + moodId + "  memo::" + memo + "."); //moodId-> 0-5
         holder.itemView.setBackgroundColor(Color.parseColor(Constants.colorsArr[moodId]));
         holder.title.setText(Constants.titles[position]);
 //      if memo exists, show comment button, share button AND set onClickListener
@@ -64,7 +59,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             holder.btnImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d(TAG, "clicked on image from " + Constants.titles[position]);
                     Toast.makeText(mContext, modelClass.get(position).getMemo(), Toast.LENGTH_LONG).show();
                 }
             });
@@ -130,7 +124,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         ViewHolder(@NonNull View view) {
             super(view);
-            Log.d(TAG, "ViewHolder: setting up views");
             container = view.findViewById(R.id.parent_layout);
             title = view.findViewById(R.id.tvTitle);
             btnImage = view.findViewById(R.id.btnImage);

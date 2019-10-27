@@ -1,12 +1,11 @@
-package com.fanikiosoftware.moodtracker.Utility;
+package com.fanikiosoftware.moodtracker.utility;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
-import com.fanikiosoftware.moodtracker.Controller.MyAlarmReceiver;
+import com.fanikiosoftware.moodtracker.controller.MyAlarmReceiver;
 
 import java.util.Calendar;
 
@@ -44,6 +43,5 @@ public class MyCalendarClass {
                 AlarmManager.INTERVAL_DAY,
                 pIntent
         );
-        Log.d(TAG, "alarm set");
     }
 }

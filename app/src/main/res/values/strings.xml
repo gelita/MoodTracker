@@ -1,19 +1,13 @@
 <resources>
     <string name="app_name">Mood Tracker</string>
     <string name="great_desc">Great mood emoji</string>
-    <string name="good_desc">Good mood emoji</string>
-    <string name="bad_desc">Bad mood emoji</string>
-    <string name="sad_desc">Sad mood emoji</string>
-    <string name="decent_desc">Decent mood emoji</string>
     <string name="button_add_note">Add Note Button</string>
     <string name="button_view_history">View History Button</string>
     <string name="comment">Comment</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
-    <string name="textview">TextView</string>
     <string name="message_button">Message button</string>
     <string name="title">title</string>
-    <string name="button_share">Share button</string>
     <string name="share_button">Share button</string>
     <string name="type_your_memo_here">Type your memo here</string>
     <string name="show_pie_chart">Show pie chart</string>

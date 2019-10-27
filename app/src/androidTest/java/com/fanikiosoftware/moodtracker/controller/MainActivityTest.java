@@ -1,4 +1,4 @@
-package com.fanikiosoftware.moodtracker.Controller;
+package com.fanikiosoftware.moodtracker.controller;
 
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
